@@ -14,8 +14,8 @@ sub startup {
   # Router
   my $r = $self->routes;
 
-  # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  # Page with angular2 bundle
+  $r->get('/' => sub { shift->reply->static( 'index.html' ) });
 }
 
 1;
