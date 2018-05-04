@@ -1,21 +1,27 @@
 package Go1f;
 use Mojo::Base 'Mojolicious';
 
+use Mojo::Pg;
+
 # This method will run once at server start
 sub startup {
-  my $self = shift;
+  my $app = shift;
 
   # Load configuration from hash returned by "my_app.conf"
-  my $config = $self->plugin('Config');
+  my $config = $app->plugin('Config');
 
   # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer') if $config->{perldoc};
+  $app->plugin('PODRenderer') if $config->{perldoc};
 
   # Router
-  my $r = $self->routes;
+  my $r = $app->routes;
 
   # Page with angular2 bundle
   $r->get('/' => sub { shift->reply->static( 'index.html' ) });
+
+	$app->attr(
+		pg => sub { Mojo::Pg->new($config->{postgresql}{url})->db }
+	);
 }
 
 1;

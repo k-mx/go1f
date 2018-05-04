@@ -4,6 +4,11 @@ use Test::More;
 use Test::Mojo;
 
 my $t = Test::Mojo->new('Go1f');
-$t->get_ok('/')->status_is(200)->content_like(qr/Mojolicious/i);
+
+is(
+  $t->app->pg->query('select 42')->text,
+  "42\n",
+  'postgres was successfully queried '
+);
 
 done_testing();
