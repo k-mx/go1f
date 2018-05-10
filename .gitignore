@@ -1,2 +1,4 @@
 local/
 node_modules/
+public/angular2/node_modules/
+public/angular2/dist/

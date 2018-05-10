@@ -1,18 +1,12 @@
-<img style="width:250px" src="/images/go1f-logo.png">
-<h3>
-  Angular 2 Seed
-</h3>
-<nav>
-	<a [routerLink]="['/']">
-    Home
-  </a>
-</nav>
-
-<main>
-	<router-outlet></router-outlet>
-</main>
+<div class="flex-box">
 
 
-<footer>
-  © 2017
-</footer>
+  <div class="content-flex-item">
+    <navbar></navbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer>© 2017</footer>
+  </div>
+</div>

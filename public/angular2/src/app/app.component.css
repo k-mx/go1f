@@ -1,0 +1,26 @@
+:host {
+  font-family:  "Lucida Console", Monaco, monospace;
+  margin:       0;
+  --text-color: #262626;
+  --green-bg:   #e1f3cc;
+  --white-bg:   #fff;
+
+}
+
+:host /deep/ {
+  color:          var(--text-color);
+
+  /* Common variables */
+  --green-bg:     #fff;
+  --white-bg:     #e1f3cc;
+  --content-size: 820px;
+}
+
+.flex-box {
+  display:         flex;
+  justify-content: center;
+}
+
+.content-flex-item {
+  flex: 0 0 var(--content-size);
+}
