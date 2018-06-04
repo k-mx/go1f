@@ -20,7 +20,7 @@
   height:       var(--nav-bar-height);
 }
 
-.nav-container-flex > a {
+a.nav-link {
   color:           var(--text-color);
   text-decoration: none;
   font-weight:     bold;
@@ -32,13 +32,13 @@
   width:       100px;
 }
 
-.nav-container-flex > a:hover,
-.nav-container-flex > a:last-child:hover,
-.nav-container-flex > a.is-active {
+a.nav-link:hover,
+a.nav-link:last-child:hover,
+a.is-active {
   background-color: var(--green-bg);
 }
 
-.nav-container-flex > a:last-child {
+a.nav-link:last-child {
   background:    right 5px top 13px/20px url('/images/GitHub icon.svg') no-repeat;
   padding-right: 25px;
   justify-self:  end;

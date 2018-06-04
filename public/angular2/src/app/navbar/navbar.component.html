@@ -3,6 +3,7 @@
   <img [routerLink]="['/']" class="logo" src="/images/go1f-logo.png">
   <div class="nav-container-flex">
     <a 
+      class="nav-link"
       *ngFor="let link of links"
       [routerLinkActive]="'is-active'"
       [routerLink]="link.url"
