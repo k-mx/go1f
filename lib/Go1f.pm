@@ -17,7 +17,7 @@ sub startup {
   my $r = $app->routes;
 
   # Page with angular2 bundle
-  $r->get('/' => sub { shift->reply->static( 'index.html' ) });
+  $r->get('/' => sub { shift->reply->static( 'ng-go1f/index.html' ) });
 
 	$app->attr(
 		pg => sub { Mojo::Pg->new($config->{postgresql}{url})->db }
