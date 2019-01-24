@@ -35,6 +35,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "deployUrl": "ng-go1f/",
             "outputPath": "../public/ng-go1f",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -42,7 +43,13 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/app/navbar/images/GitHub icon.svg",
+              {
+                "glob": "**/*",
+                "input": "src/app/navbar/images",
+                "output": "/images"
+              }
             ],
             "styles": [
               "src/styles.css",
