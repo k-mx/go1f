@@ -13,9 +13,12 @@ sub startup {
     # Router
     my $r = $app->routes;
 
+    my $ng_services = $r->get('/ng-services');
+
+    $ng_services->get('/config-service')->to( 'config_service#shared_settings');
+
     # Page with angular2 bundle
-    $r
-        ->get( '/#ng-route' => sub { shift->reply->static( 'ng-go1f/index.html' ) } )
+    $r->get( '/#ng-route' => sub { shift->reply->static( 'ng-go1f/index.html' )})
         # placeholder becomes optional
         ->to( 'ng-route' => '/' );
 
