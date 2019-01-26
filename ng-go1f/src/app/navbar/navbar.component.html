@@ -1,13 +1,22 @@
 <div class="nav-background"></div>
 <nav>
-  <img [routerLink]="['/']" class="logo" src="/images/go1f-logo.png">
-  <div class="nav-container-flex">
-    <a 
-      class="nav-link"
-      *ngFor="let link of links"
-      [routerLinkActive]="'is-active'"
-      [routerLink]="link.url"
-    >
-      {{link.name}}</a>
-  </div>
+    <img [routerLink]="['/']" class="logo" src="/images/go1f-logo.png">
+    <div class="nav-container-flex">
+        <a
+            *ngFor             = "let link of links"
+            [routerLinkActive] = "'is-active'"
+            [routerLink]       = "link.url"
+
+            class="nav-link"
+        >
+            {{link.name}}</a>
+<!-- TODO move this elemnt to the loop -->
+        <a
+            href  ="https://github.com/login/oauth/authorize"
+            go1fExternalUrl
+
+            class ="nav-link"
+        >
+            Sign in</a>
+    </div>
 </nav>

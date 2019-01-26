@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'go1f-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+    selector: 'go1f-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
 
-  public links : { url: string, name: string }[];
+    public links : { url: string, name: string }[];
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    this.links = [
-      { url: '/', name: 'Home' },
-      { url: '/stfu', name: 'STFU' },
-      { url: '/auth', name: 'Sign in'},
-    ];
-  }
+        this.links = [
+            { url: '/', name: 'Home' },
+            { url: '/stfu', name: 'STFU' },
+        ];
+    }
 
 }
