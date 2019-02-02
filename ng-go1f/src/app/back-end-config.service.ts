@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BackEndConfigService {
 
-    constructor( private http: HttpClient ) { }
+    constructor( private http: HttpClient ) {}
 
     getConfig() {
         return this.http.get('/ng-services/config-service');

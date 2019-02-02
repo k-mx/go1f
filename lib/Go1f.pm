@@ -15,7 +15,10 @@ sub startup {
 
     my $ng_services = $r->get('/ng-services');
 
-    $ng_services->get('/config-service')->to( 'config_service#shared_settings');
+    $ng_services->get('/config-service')->to( 'config_service#shared_settings' );
+
+    # Github oauth callback url
+    $r->get('/github/oauth')->to( 'github#oauth_callback' );
 
     # Page with angular2 bundle
     $r->get( '/#ng-route' => sub { shift->reply->static( 'ng-go1f/index.html' )})
