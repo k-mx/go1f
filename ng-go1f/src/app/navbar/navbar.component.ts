@@ -22,9 +22,9 @@ export class NavbarComponent implements OnInit {
             .backEndConfigService
             .getConfig()
             .subscribe( d => {
-                this.backEndConfig           = Object.freeze(d);
-                this.githubParams = Object.assign(this.backEndConfig.github);
-                this.githubParams.state     = Math.random().toString(36).substring(2);
+                this.backEndConfig      = Object.freeze(d);
+                this.githubParams       = Object.assign(this.backEndConfig.github);
+                this.githubParams.state = Math.random().toString(36).substring(2);
             });
 
         this.links = [

@@ -2,6 +2,7 @@ package Go1f;
 use Mojo::Base 'Mojolicious';
 
 use Mojo::Pg;
+use Mojo::Pg::Migrations;
 
 # This method will run once at server start
 sub startup {
@@ -25,9 +26,15 @@ sub startup {
         # placeholder becomes optional
         ->to( 'ng-route' => '/' );
 
+    my $db = Mojo::Pg->new($config->{postgresql}{url})
+        ->migrations
+        ->from_file('./etc/migrations.sql')
+        ->migrate();
+
     $app->attr(
-        pg => sub { Mojo::Pg->new($config->{postgresql}{url})->db }
+        pg => sub { Mojo::Pg->new($config->{postgresql}{url})->db },
     );
+
 }
 
 1;
