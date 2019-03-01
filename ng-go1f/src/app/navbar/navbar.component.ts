@@ -1,6 +1,8 @@
 import { Component, OnInit }    from '@angular/core';
 import { BackEndConfigService } from '../back-end-config.service';
+import { GithubService }        from '../github.service';
 import { Router }               from '@angular/router';
+import { forkJoin }             from 'rxjs';
 
 @Component({
     selector: 'go1f-navbar',
@@ -10,22 +12,23 @@ import { Router }               from '@angular/router';
 export class NavbarComponent implements OnInit {
 
     public  links         : { url: string, name: string }[];
-    private backEndConfig : {[key : string ] : any};
     public  githubParams  : {[key : string ] : any};
 
     constructor(
-        private backEndConfigService : BackEndConfigService,
-        private router               : Router
+        private router               : Router,
+        private githubService        : GithubService,
     ) {
 
-        this
-            .backEndConfigService
-            .getConfig()
-            .subscribe( d => {
-                this.backEndConfig      = Object.freeze(d);
-                this.githubParams       = Object.assign(this.backEndConfig.github);
-                this.githubParams.state = Math.random().toString(36).substring(2);
-            });
+        forkJoin(
+
+            githubService.getState(),
+            githubService.getGithubConfig(),
+        )
+        .subscribe( ([state, githubParams]) => {
+                githubParams.state = state;
+                this.githubParams  = Object.freeze( githubParams );
+            }
+        );
 
         this.links = [
             { url: '/', name: 'Home' },

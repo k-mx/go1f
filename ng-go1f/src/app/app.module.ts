@@ -8,6 +8,7 @@ import { HomeComponent }        from './home/home.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { ExternalUrlDirective } from './external-url.directive';
 import { BackEndConfigService } from './back-end-config.service';
+import { GithubService }        from './github.service';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,10 @@ import { BackEndConfigService } from './back-end-config.service';
         AppRoutingModule,
         HttpClientModule,
     ],
-    providers: [ BackEndConfigService ],
+    providers: [
+        BackEndConfigService,
+        GithubService,
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
