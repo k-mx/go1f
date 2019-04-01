@@ -1,0 +1,17 @@
+*.pl linguist-language=Perl
+*.pm linguist-language=Perl
+
+ng-go1f/angular.json linguist-vendored
+ng-go1f/e2e/protractor.conf.js linguist-vendored
+ng-go1f/e2e/src/app.e2e-spec.ts linguist-vendored
+ng-go1f/e2e/src/app.po.ts linguist-vendored
+ng-go1f/e2e/tsconfig.e2e.json linguist-vendored
+ng-go1f/src/environments/environment.prod.ts linguist-vendored
+ng-go1f/src/environments/environment.ts linguist-vendored
+ng-go1f/src/karma.conf.js linguist-vendored
+ng-go1f/src/polyfills.ts linguist-vendored
+ng-go1f/src/tsconfig.app.json linguist-vendored
+ng-go1f/src/tsconfig.spec.json linguist-vendored
+ng-go1f/src/tslint.json linguist-vendored
+ng-go1f/src/tslint.json linguist-vendored
+ng-go1f/tsconfig.json linguist-vendored
