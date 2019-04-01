@@ -12,7 +12,7 @@
             {{link.name}}</a>
 <!-- TODO move this elemnt to the loop -->
         <a
-            href  ="https://github.com/login/oauth/authorize"
+            href  ="https://github.com/login/oauth/authorize?client_id={{ githubParams?.client_id}};state={{ githubParams?.state}};scope=user:email"
             go1fExternalUrl
 
             class ="nav-link"
