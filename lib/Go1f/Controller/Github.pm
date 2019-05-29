@@ -1,7 +1,7 @@
 package Go1f::Controller::Github;
 
 use Mojo::Base 'Mojolicious::Controller';
-use feature 'postderef';
+#use feature 'postderef';
 
 use String::Random qw( random_string );
 
@@ -39,6 +39,8 @@ sub oauth_callback {
             );
     }
 
+    $c->session( oauth_state => '' );
+
     $c->render_later;
 
     my $github = $c->app->model('github');
@@ -57,7 +59,9 @@ sub oauth_callback {
         sub {
             my $login = shift;
 
-            $c->render( text => $login );
+            $c->session( login => $login );
+
+            $c->redirect_to( '/' );
         }
     )->catch(
         sub {

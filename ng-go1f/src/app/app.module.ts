@@ -4,18 +4,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent }         from './app.component';
 import { NavbarComponent }      from './navbar/navbar.component';
-import { HomeComponent }        from './home/home.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { ExternalUrlDirective } from './external-url.directive';
 import { BackEndConfigService } from './back-end-config.service';
 import { GithubService }        from './github.service';
+import { AuthService }          from './auth.service';
+import { TasksComponent } from './tasks/tasks.component';
+import { EventsComponent } from './events/events.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
-        HomeComponent,
-        ExternalUrlDirective
+        ExternalUrlDirective,
+        TasksComponent,
+        EventsComponent,
+        AddEventComponent
     ],
     imports: [
         BrowserModule,
@@ -23,6 +28,7 @@ import { GithubService }        from './github.service';
         HttpClientModule,
     ],
     providers: [
+        AuthService,
         BackEndConfigService,
         GithubService,
     ],

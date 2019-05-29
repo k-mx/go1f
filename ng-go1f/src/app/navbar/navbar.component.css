@@ -1,7 +1,7 @@
 :host {
   --nav-bar-height: 50px;
-  --green-bg:       #fff;
-  --white-bg:       #e1f3cc;
+  --green-bg:       #e1f3cc;
+  --white-bg:       #fff;
   --logo-size:      70px;
 }
 
@@ -35,7 +35,7 @@ a.nav-link {
 a.nav-link:hover,
 a.nav-link:last-child:hover,
 a.is-active {
-  background-color: var(--green-bg);
+  background-color: var(--white-bg);
 }
 
 a.nav-link:last-child {
@@ -47,11 +47,21 @@ a.nav-link:last-child {
   height:        100%;
 }
 
+img.avatar {
+    height:   100%;
+}
+
+div.auth-data-container {
+    position: absolute;
+    right:    0;
+    height:   50px;
+}
+
 .nav-background {
   width:            100%;
   height:           50px;
   position:         absolute;
   left:             0;
-  background-color: var(--white-bg);
+  background-color: var(--green-bg);
 }
 

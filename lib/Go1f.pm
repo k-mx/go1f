@@ -10,6 +10,7 @@ sub startup {
     $app->plugin('Model');
 
     $app->ua
+        # TODO to constants/config
         ->max_redirects(0)
         ->connect_timeout(3)
         ->request_timeout(5);
@@ -24,9 +25,11 @@ sub startup {
 
     $ng_services->get('/config-service')->to( 'config_service#shared_settings' );
     $ng_services->get('/github/oauth-state')->to( 'github#oauth_state' );
+    $ng_services->get('/auth')->to( 'auth#auth' );
 
     # Github oauth callback url
     $r->get('/github/oauth')->to( 'github#oauth_callback' );
+
 
     # Page with angular2 bundle
     $r->get( '/#ng-route' => sub { shift->reply->static( 'ng-go1f/index.html' )})
@@ -35,8 +38,7 @@ sub startup {
 
     my $db = Mojo::Pg->new($config->{postgresql}{url});
 
-    $db->migrations
-       ->from_file('./etc/migrations.sql');
+    $db->migrations->from_file( $app->home->rel_file('./etc/migrations.sql') );
 
     # You can use migrations this way:
     # ./script/go1f eval 'app->db->migrations->migrate()'

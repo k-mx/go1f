@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'go1f';
+  title : string = 'go1f';
+  year  : number = new Date().getFullYear();
 }

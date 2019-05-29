@@ -71,7 +71,7 @@ sub user_create_p ( $self, $access_token ) {
                 VALUES ( ?, ?, ?, ?, ? )
                 RETURNING login
                 ',
-                $user->@{qw/ name login avatar_url /}, $email, $access_token
+                $user->@{qw/ name login avatar_url /}, $email, $access_token,
             );
         }
     )->then(

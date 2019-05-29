@@ -1,7 +1,3 @@
-CREATE TABLE github_sessions (
-    id SERIAL,
-);
-
 -- 1 up
 
 -- FIXME add IS NOT NULL to columns
