@@ -1,7 +1,5 @@
 :host {
   --nav-bar-height: 50px;
-  --green-bg:       #e1f3cc;
-  --white-bg:       #fff;
   --logo-size:      70px;
 }
 
@@ -62,6 +60,6 @@ div.auth-data-container {
   height:           50px;
   position:         absolute;
   left:             0;
-  background-color: var(--green-bg);
+  background-color: var(--light-green-bg);
 }
 

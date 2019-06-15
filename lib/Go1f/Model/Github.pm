@@ -68,10 +68,12 @@ sub user_create_p ( $self, $access_token ) {
             $self->app->pg->query_p(
                 '
                 INSERT INTO users ( name, login, avatar_url, email, access_token )
-                VALUES ( ?, ?, ?, ?, ? )
+                    VALUES ( ?, ?, ?, ?, ? )
+                ON CONFLICT ( login ) DO
+                    UPDATE SET ( name, login, avatar_url, email, access_token ) = ( ?, ?, ?, ?, ? )
                 RETURNING login
                 ',
-                $user->@{qw/ name login avatar_url /}, $email, $access_token,
+                ( $user->@{qw/ name login avatar_url /}, $email, $access_token ) x 2,
             );
         }
     )->then(

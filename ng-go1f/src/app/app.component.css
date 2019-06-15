@@ -1,18 +1,19 @@
 :host {
-  font-family:  "Lucida Console", Monaco, monospace;
-  margin:       0;
-  --text-color: #262626;
-  --green-bg:   #e1f3cc;
-  --white-bg:   #fff;
+  font-family:        "Lucida Console", Monaco, monospace;
+  margin:             0;
+  --text-color:       #262626;
+  --light-green-bg:   #e1f3cc;
+  --green-bg:         #8cc75d;
+  --dark-green-bg:    #5fa73e;
+  --white-bg:         #fff;
 
+  --main-vert-margin: 20px;
 }
 
 :host /deep/ {
   color:          var(--text-color);
 
   /* Common variables */
-  --green-bg:     #fff;
-  --white-bg:     #e1f3cc;
   --content-size: 820px;
 }
 
@@ -25,3 +26,7 @@
   flex: 0 0 var(--content-size);
 }
 
+main {
+    margin-top:    var(--main-vert-margin);
+    margin-bottom: var(--main-vert-margin);
+}

@@ -1,0 +1,36 @@
+label {
+    position: relative;
+    height:   48px;
+    display: block;
+    max-width: 280px;
+    width: 100%;
+}
+
+input {
+    position: absolute;
+    bottom: 0;
+    border: none;
+    border-bottom: 2px solid var(--green-bg);
+    max-width: 280px;
+    background: none;
+    padding:    0;
+    width: 100%;
+}
+
+span.label {
+    position:    absolute;
+    bottom:      2px;
+    left:        0px;
+    font-weight: bold;
+    color:       var(--green-bg);
+    padding:     0;
+}
+
+span.border {
+    position: absolute;
+    bottom:  0;
+    height: 2px;
+    background: var(--dark-green-bg);
+    max-width: 280px;
+    width:    0;
+}

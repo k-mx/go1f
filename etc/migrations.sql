@@ -1,5 +1,16 @@
--- 1 up
+-- 2 up
 
+CREATE TABLE events (
+    id SERIAL,
+    name TEXT,
+    CONSTRAINT event_name_length CHECK (length(name) <= 96)
+);
+
+-- 2 down
+
+DROP TABLE events;
+
+-- 1 up
 -- FIXME add IS NOT NULL to columns
 CREATE TABLE users (
     id           SERIAL,
